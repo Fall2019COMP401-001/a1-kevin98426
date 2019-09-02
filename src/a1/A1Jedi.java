@@ -30,6 +30,8 @@ public class A1Jedi {
 			lastname[current_person] = scan.next();
 			int items = scan.nextInt();
 
+			boolean[] yes_or_no = new boolean[number_products];
+
 			for (int k = 0; k < items; k++) {
 				int quantity = scan.nextInt();
 				String item = scan.next();
@@ -38,8 +40,10 @@ public class A1Jedi {
 
 					if (item.equals(product_name[i])) {
 						total_num_bought_each_product[i] += quantity;
-						num_people_product[i] += 1;
-
+						if (yes_or_no[i] == false) {
+							num_people_product[i] += 1;
+							yes_or_no[i] = true;
+						}
 					}
 				}
 			}
